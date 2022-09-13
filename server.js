@@ -7,7 +7,7 @@ const db = require('./db');
 		const port = parseInt(`${process.env.APP_PORT}`);
 
 		await app.listen(port);
-		console.log(`Servidor rodando na porta ${port}`);
+		console.log(`Server running on port ${port}`);
 	}
 	catch (error) {
 		console.log(`${error}`);
