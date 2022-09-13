@@ -1,30 +1,30 @@
-# Desafio API
+# Challenge API
 
-Aplicativo de desafio para manipulação de dados usndo a API do github e banco de dados.
+Challenge app for data manipulation using github and database API.
 
-🚀 O que fez?
-1. Busca o nome e local da api do github e gravar em um banco postgreSQL.
-2. Exibi todos os usuário cadastrados na base de dados.
-3. lista os usuário pelo local.
-4. consultar as linguagens/repositorios dos usuário cadastrados.
+🚀 What did you do?
+1. Search the name and location of the api from github and write to a postgreSQL database.
+2. Display all users registered in the database.
+3. List users by location.
+4. consult the languages/repositories of the registered users.
 
-🧩 Rotas:
-//consultar o nome e inserir no banco <name, location, email, bio, repositorio>
-router.get('/PesquisandoPerfil/GitHub/:name', controller.presquisarPerfilGitHub)
-//todos os usuário que estão no banco
+🧩 Routes:
+//consult the name and insert in the bank <name, location, email, bio, repositories>
+router.get('/SearchingProfile/GitHub/:name', controller.searchingProfileGitHub)
+//All users that are in the database
 router.get('/users', usersController.get)
-//faz a pesquisa por location
+//Search by location
 router.get('/users/location/:location', usersController.getByLocation)
 
 
-⚙ Ferramentas:
+⚙ Tools:
 Node.js, Express, PostgreSQL, Javascript, Helmet
 
-🛠 Iniciando:
-1. Clone o repositório rodando no seu terminal/cmd git clone 
-2. Entre na pasta do projeto e rode npm para instalar todas as dependências
-3. Crie a o banco de dados da aplicação utilizando a plataforma PostgreSQL (seguir este tutorial: https://www.prisma.io/dataguide/postgresql/connecting-to-postgresql-databases)
-4. Crie um arquivo .env:
+🛠 Starting:
+1. Clone the repository running in your terminal/cmd git clone
+2. Enter the project folder and run npm to install all dependencies
+3. Create the application database using the PostgreSQL platform (follow this tutorial: https://www.prisma.io/dataguide/postgresql/connecting-to-postgresql-databases)
+4. Create a file .env:
 APP_PORT=8080
 
 DB_HOST=localhost
@@ -34,8 +34,7 @@ DB_USER=postgres
 DB_PASS=1qaz@WSX
 DB_MAX=30
 
-5. Rodar o script do banco de dados:
-Script banco de dados.sql
+5. Run the database script:
+Script database.sql
 
-5. Por fim, npm start para iniciar o server
-    
+5. Finally, npm start to start the server.
