@@ -2,13 +2,13 @@ const controller = require('../controller/controller')
 const usersController = require('../controller/users')
 const router = require('express').Router()
 
-//consultar o nome e inserir no banco <name, location, email, bio, repositorios>
-router.get('/PesquisandoPerfil/GitHub/:name', controller.presquisarPerfilGitHub)
+//consult the name and insert in the bank <name, location, email, bio, repositories>
+router.get('/SearchingProfile/GitHub/:name', controller.searchingProfileGitHub)
 
-//todos os usuário que estão no banco
+//all users that are in the bank
 router.get('/users', usersController.get)
 
-//faz a pesquisa por location
+//search by location
 router.get('/users/location/:location', usersController.getByLocation)
 
 module.exports = router
