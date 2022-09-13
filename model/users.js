@@ -2,7 +2,7 @@ const db = require('../db');
 
 module.exports = {
 
-	//Inseirr no banco de dados
+	//Insert into database
 	async insert(user) {
 		try {
 			const sql = 'INSERT INTO users(name,email,location,bio)VALUES'
@@ -16,29 +16,29 @@ module.exports = {
 			});
 		}
 		catch (err) {
-			console.error(`Erro ao inserir usuário: ${err}`);
+			console.error(`Error entering user: ${err}`);
 		}
 	},
 
-	//pesqusia por location
+	//search by location
 	async selectLocation(location) {
 		try {
 			const sql = "SELECT * FROM users WHERE upper(location) = upper($1)";
 			return await db.any(sql, location);
 		}
 		catch (err) {
-			console.error(`Erro ao consultar usuário: ${err}`);
+			console.error(`Error querying user: ${err}`);
 		}
 	},
 
-	//pesquisa todos os usuários
+	//search all users
 	async select() {
 		try {
 			const sql = "SELECT * FROM users";
 			return await db.any(sql);
 		}
 		catch (err) {
-			console.error(`Erro ao consultar usuário: ${err}`);
+			console.error(`Error querying user: ${err}`);
 		}
 	}
 }
