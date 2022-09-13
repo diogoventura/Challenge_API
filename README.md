@@ -35,6 +35,6 @@ DB_PASS=1qaz@WSX
 DB_MAX=30
 
 5. Run the database script:
-Script database.sql
+Script_database.sql
 
 5. Finally, npm start to start the server.
