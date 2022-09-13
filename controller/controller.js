@@ -2,21 +2,21 @@ const axios = require('axios')
 const usersModel = require('../model/users');
 
 module.exports = {
-	async presquisarPerfilGitHub(req, res) {
+	async searchProfileGitHub(req, res) {
 		const { name } = req.params
-		var nome, bio, imagem
-		await axios.get('http://api.github.com/users/' + name).then(async function (resposta) {
+		var namev, bio, imagem
+		await axios.get('http://api.github.com/users/' + name).then(async function (answer) {
 			console.log(resposta.data)
 
-			nome = resposta.data.name
-			local = resposta.data.location
-			email = resposta.data.email
-			bio = resposta.data.bio
-			repos_url = resposta.data.repos_url
+			namev = answer.data.name
+			place = answer.data.location
+			email = answer.data.email
+			bio = answer.data.bio
+			repos_url = answer.data.repos_url
 
 			user = {
-				name: nome
-				, location: local
+				name: namev
+				, location: place
 				, email: email
 				, bio: bio
 				, repos_url: repos_url
@@ -25,7 +25,7 @@ module.exports = {
 			await usersModel.insert(user);
 			res.status(200).json(user);
 		}).catch((err) => {
-			res.json({ msg: "Perfil não encontrado" + err })
+			res.json({ msg: "Profile not found" + err })
 		})
 	},
 }
